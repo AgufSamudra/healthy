@@ -1,0 +1,6 @@
+people (https://gist.github.com/maulvi/e443e22b82a1dc24e14344b47f0a80ea#file-nama-txt)
+tensorflow documentation (https://www.tensorflow.org/api_docs)
+udemy course ZTM (https://www.udemy.com/course/tensorflow-developer-certificate-machine-learning-zero-to-mastery/)
+streamlit documentation (https://docs.streamlit.io/)
+chatgpt (https://chat.openai.com/)
+alodokter (https://www.alodokter.com/komunitas/diskusi/penyakit)
