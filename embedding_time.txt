@@ -1,0 +1,1 @@
+1. Embedding with 10.000 sample of data: 993.8663065433502 detik (16.56 menit) Size: 507MB

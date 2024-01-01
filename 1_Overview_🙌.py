@@ -10,7 +10,6 @@ st.markdown("""
 Ada beberapa fitur yang ada pada aplikasi ini, sebagai berikut:
 * **Healthy Bot**: Temukan kenyamanan dalam berkonsultasi mengenai kesehatan dengan Healthy Bot. Ajukan keluhan kesehatan Anda, dan dapatkan jawaban langsung dalam waktu singkat.
 * **News**: Tetap terinformasi dengan fitur berita kesehatan. Setiap hari, Anda dapat menemukan berita-berita terbaru yang relevan, memastikan Anda selalu mendapatkan informasi terkini untuk kesejahteraan Anda.
-* **Hospital**: Akses informasi rumah sakit terdekat berdasarkan lokasi Anda. Fitur Hospital memudahkan Anda dalam menemukan layanan kesehatan di sekitar Anda dengan cepat dan efisien.
 """)
 
 st.title("Healthy Bot")
@@ -27,55 +26,31 @@ col1, col2 = st.columns(2)
 with col1:
     st.markdown("""
     * Kewanitaan
-        * Intim Wanita
-        * Menstruasi
-        * Keputihan
-    
     * Masalah Pencernaan
-        * Asam Lambung
-        * Sakit Perut
-        * Diare
-        
     * Pernafasan
-        * Asma
-        * Batuk
-        
     * Gigi dan Mulut
-        * Gigi
-        * Amandel
-    
     * Penyakit Umum
-        * Cedera
-        * Nyeri Dada
-        * Cacar Air
-        
     * Alergi
     """)
 
 with col2:
     st.markdown("""
         * Masalah Kulit
-            * Kulit
-            * Jerawat
-            * Gatal
-            
         * Kesehatan Anak dan Bayi
-            * Bayi
-            * Kehamilan
-            * Anak
-        
         * Obat dan Nutrisi
-            * Obat
-            * Nutrisi
-            
         * Sakit Kepala dan Demam
-            * Sakit Kepala
-            * Demam
-            
         * Masalah Metabolik
-            * Diabetes
-            * Batu Ginjal
-            * Asam Urat
-            
         * Intim Laki
         """)
+
+st.title("Teknologi")
+st.markdown("""
+            Teknologi yang digunakan adalah sebagai berikut:
+            1. Python
+            2. Streamlit (Web UI)
+            3. Langchain (Framework for LLM)
+            4. ChromaDB (Vector Database)
+            5. Google Gemini-Pro (LLM Model)
+            6. Google Embedding-001 (Embedding Model)
+            7. Deep Translator (for Translate)
+            """)
