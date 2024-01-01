@@ -16,13 +16,12 @@ translator_to_indonesian = GoogleTranslator(source='auto', target='id')
 translator_to_english = GoogleTranslator(source='auto', target='en')
 
 st.title("Healthy Bot")
-st.error("Bot ini tidak sempurna, namun masih tetap bisa memberikan jawaban. Akan tetapi konsultasi langsung ke dokter adalah hal tepat! 😊")
 
 st.markdown("</br>", unsafe_allow_html=True)
 
 input_user = st.text_area("Ceritakan Keluhan Anda (dengan detail)", placeholder="Ceritakan Keluhan dengan Detail")
 
-button = st.button("Kirim Pesan", type="primary")
+button = st.button("Submit", type="primary")
 
 if button:
     input_user_english = translator_to_english.translate(input_user)
