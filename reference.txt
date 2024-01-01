@@ -4,3 +4,5 @@ udemy course ZTM (https://www.udemy.com/course/tensorflow-developer-certificate-
 streamlit documentation (https://docs.streamlit.io/)
 chatgpt (https://chat.openai.com/)
 alodokter (https://www.alodokter.com/komunitas/diskusi/penyakit)
+gemini model (https://ai.google.dev/)
+langchain (https://www.langchain.com/)

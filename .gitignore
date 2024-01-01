@@ -1,17 +1,31 @@
 env/
 
 # custom LM
-language_model/
+model/
 
-# dataset
-dataset/data.csv
-dataset/data_13_labels.csv
-dataset/9_class/testing.csv
-dataset/9_class/training.csv
+# dataset and data
+dataset/
+data/
 
-# dll
-cleaning_answer.ipynb
-experiment_1.ipynb
+# Enviroment
+healthy_env/
+
+# Key
+API_KEY.txt
+
+# etc
+notebook/
+model/
 
 __pycache__/
 .ipynb_checkpoints/
+
+# txt file
+early_word.txt
+nama.txt
+
+# python file
+helper.py
+speed_score_tradeoff.py
+store_code.py
+translate_to_english.py

@@ -1,7 +1,5 @@
-pandas
-numpy
-joblib
-scikit-learn
-tensorflow
+Python==3.10.11
 streamlit
-seaborn
+langchain
+langchain_google_genai
+deep-translator
