@@ -3,3 +3,4 @@ langchain
 langchain_google_genai
 deep-translator
 chromadb
+pysqlite3-binary

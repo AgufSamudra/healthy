@@ -9,6 +9,12 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from prompt_tamplate import prompt_template, prompt_template_2
 from deep_translator import GoogleTranslator
 
+import sqlite3
+
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 
 API_KEY = st.secrets["API_KEY"]
 
