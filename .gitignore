@@ -20,11 +20,12 @@ model/
 __pycache__/
 .ipynb_checkpoints/
 
+# txt file
 early_word.txt
 nama.txt
 
+# python file
 helper.py
 speed_score_tradeoff.py
 store_code.py
-translate_to_english.py
 translate_to_english.py
