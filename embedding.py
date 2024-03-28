@@ -1,27 +1,77 @@
-import time
 from langchain.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
-from langchain.embeddings import HuggingFaceInstructEmbeddings
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from itertools import chain
 
-start_time = time.time()
 
-loader = TextLoader("data/data_sample_10000.txt", encoding="utf-8")
+
+# loader = TextLoader("dataset/data_ex_3_cleaning/alodokter/alodokter_article.txt", encoding="utf-8")
+# docs = loader.load()
+
+# loader2 = TextLoader("dataset/data_ex_3_cleaning/halodoc/halodoc_article.txt", encoding="utf-8")
+# docs2 = loader2.load()
+
+# loader3 = TextLoader("dataset/data_ex_3_cleaning/news_health/news_cnn.txt", encoding="utf-8")
+# docs3 = loader3.load()
+
+# loader4 = TextLoader("dataset/data_ex_3_cleaning/qna_alodokter/answers_alodokter.txt", encoding="utf-8")
+# docs4 = loader4.load()
+
+
+# text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=350)
+
+# texts = text_splitter.split_documents(docs)
+# texts2 = text_splitter.split_documents(docs2)
+# texts3 = text_splitter.split_documents(docs3)
+# texts4 = text_splitter.split_documents(docs4)
+
+# list_data = list(chain(texts, texts2, texts3, texts4))
+
+# len(list_data)
+
+# embeddings = HuggingFaceEmbeddings(model_name="firqaaa/indo-sentence-bert-base")
+
+# persist_directory = "db_indo_bert"
+# vectordb = Chroma.from_documents(documents=list_data,
+#                                  embedding=embeddings,
+#                                  persist_directory= persist_directory)
+
+
+
+# ===================================================== V2 =================================================
+
+
+loader = TextLoader("dataset/data_ex_3_cleaning/alodokter/alodokter_article.txt", encoding="utf-8")
 docs = loader.load()
 
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=500)
+loader2 = TextLoader("dataset/data_ex_3_cleaning/halodoc/halodoc_article.txt", encoding="utf-8")
+docs2 = loader2.load()
+
+loader3 = TextLoader("dataset/data_ex_3_cleaning/news_health/news_cnn.txt", encoding="utf-8")
+docs3 = loader3.load()
+
+from itertools import chain
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=500,
+    length_function=len)
+
 texts = text_splitter.split_documents(docs)
+texts2 = text_splitter.split_documents(docs2)
+texts3 = text_splitter.split_documents(docs3)
 
-persist_directory = "db"
+list_data = list(chain(texts, texts2, texts3))
 
-embedding = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key="KEY")
+len(list_data)
 
-vectordb = Chroma.from_documents(documents=texts,
-                                 embedding=embedding,
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain.vectorstores import Chroma
+
+embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key="AIzaSyDpEh8S4jo__bjNtJy2hN9cX838FZyF4Ww")
+
+persist_directory = "db_V2_noQA"
+vectordb = Chroma.from_documents(documents=list_data,
+                                 embedding=embeddings,
                                  persist_directory= persist_directory)
 
-end_time = time.time()  # Catat waktu selesai
-elapsed_time = end_time - start_time
-
-print(f"Proses selesai dalam waktu: {elapsed_time} detik")

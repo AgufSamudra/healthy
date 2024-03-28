@@ -29,3 +29,7 @@ helper.py
 speed_score_tradeoff.py
 store_code.py
 translate_to_english.py
+
+# database
+db/
+db_V2_noQA/
