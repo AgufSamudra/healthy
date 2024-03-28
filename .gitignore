@@ -33,3 +33,6 @@ translate_to_english.py
 # database
 db/
 db_V2_noQA/
+
+# API KEY
+api_key.py

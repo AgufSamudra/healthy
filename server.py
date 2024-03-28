@@ -2,11 +2,12 @@ from langchain.vectorstores import Chroma
 import google.generativeai as genai
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from fastapi import FastAPI
+from api_key import api_key_gemini
 import re
 
 
 # Inisialisasi model Gemini Pro
-api_key = "AIzaSyDpEh8S4jo__bjNtJy2hN9cX838FZyF4Ww"
+api_key = api_key_gemini
 app = FastAPI()
 
 def cleaning_data_before_similarity(input: str) -> str:

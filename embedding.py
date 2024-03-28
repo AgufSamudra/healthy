@@ -3,6 +3,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from itertools import chain
+from api_key import api_key_gemini
 
 
 
@@ -54,8 +55,7 @@ docs3 = loader3.load()
 from itertools import chain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=500,
-    length_function=len)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=500, separators=[""])
 
 texts = text_splitter.split_documents(docs)
 texts2 = text_splitter.split_documents(docs2)
@@ -68,7 +68,7 @@ len(list_data)
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.vectorstores import Chroma
 
-embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key="AIzaSyDpEh8S4jo__bjNtJy2hN9cX838FZyF4Ww")
+embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=api_key_gemini)
 
 persist_directory = "db_V2_noQA"
 vectordb = Chroma.from_documents(documents=list_data,
